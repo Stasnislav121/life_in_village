@@ -2,9 +2,8 @@ package main
 
 import (
 	"fmt"
-	resident "life_in_village/Resident"
-
-	// animal "life_in_village/animal"
+	animal "life_in_village/animal"
+	resident "life_in_village/resident"
 	village "life_in_village/village"
 )
 
@@ -16,14 +15,14 @@ func main() {
 	resident2 := &resident.Resident{Name: "Борис", Age: 40, Married: true, Alive: true, Events: []string{}}
 
 	// Создаем животных
-	// animal1 := &animal.Animal{Name: "Бобик", Age: 5, Type: "собака", Alive: true, Events: []string{}}
-	// animal2 := &animal.Animal{Name: "Мурка", Age: 3, Type: "кошка", Alive: true, Events: []string{}}
+	animal1 := &animal.Animal{Name: "Бобик", Age: 5, Type: "собака", Alive: true, Events: []string{}}
+	animal2 := &animal.Animal{Name: "Мурка", Age: 3, Type: "кошка", Alive: true, Events: []string{}}
 
 	// Добавляем элементы в деревню
 	village.AddElement(resident1)
 	village.AddElement(resident2)
-	// village.AddElement(animal1)
-	// village.AddElement(animal2)
+	village.AddElement(animal1)
+	village.AddElement(animal2)
 
 	// Симуляция обновления деревни на несколько лет
 	for i := 0; i < 5; i++ {

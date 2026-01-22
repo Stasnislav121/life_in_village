@@ -52,12 +52,12 @@ func (r *Resident) FlushInfo() string {
 	events := ""
 
 	if len(r.Events) == 0 {
-		events = "Не быдо событий за год"
+		events = "Не было событий за год"
 	} else {
 		events = strings.Join(r.Events, ",\n")
 	}
 
-	info := fmt.Sprintf("Имя: %s, Возраст: %d, Статус брака: %t, Жив ли: %t, События за год: %s", r.Name, r.Age, r.Married, r.Alive, events)
+	info := fmt.Sprintf("Имя: %s, Возраст: %d, Статус брака: %t, Жив ли: %t, События за год: %s\n", r.Name, r.Age, r.Married, r.Alive, events)
 
 	r.Events = []string{}
 
