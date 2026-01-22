@@ -54,7 +54,14 @@ func (a *Animal) FlushInfo() string {
 		events = strings.Join(a.Events, ",\n")
 	}
 
-	info := fmt.Sprintf("Имя: %s, Возраст: %d, Вид животного: %s, Жив ли: %t, События за год: %s\n", a.Name, a.Age, a.Type, a.Alive, events)
+	isAlive := ""
+	if a.Alive {
+		isAlive = "Да"
+	} else {
+		isAlive = "Нет"
+	}
+
+	info := fmt.Sprintf("Имя: %s:\n Возраст: %d; Вид животного: %s; Жив ли: %s; События за год: %s.\n\n", a.Name, a.Age, a.Type, isAlive, events)
 
 	a.Events = []string{}
 

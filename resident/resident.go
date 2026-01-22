@@ -57,7 +57,21 @@ func (r *Resident) FlushInfo() string {
 		events = strings.Join(r.Events, ",\n")
 	}
 
-	info := fmt.Sprintf("Имя: %s, Возраст: %d, Статус брака: %t, Жив ли: %t, События за год: %s\n", r.Name, r.Age, r.Married, r.Alive, events)
+	isMarried := ""
+	if r.Married {
+		isMarried = "Состоит в браке"
+	} else {
+		isMarried = "Холост"
+	}
+
+	isAlive := ""
+	if r.Alive {
+		isAlive = "Да"
+	} else {
+		isAlive = "Нет"
+	}
+
+	info := fmt.Sprintf("Имя: %s:\n Возраст: %d; Статус брака: %s; Жив ли: %s; События за год: %s.\n\n", r.Name, r.Age, isMarried, isAlive, events)
 
 	r.Events = []string{}
 
